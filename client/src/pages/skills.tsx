@@ -1,16 +1,20 @@
 import { motion } from "framer-motion";
 import { useSkills } from "@/hooks/use-portfolio";
-import { Cpu, Server, Layout, Wrench } from "lucide-react";
+import { Cpu, Server, Layout, Wrench, Code } from "lucide-react";
 
 export default function Skills() {
   const { data: skills, isLoading } = useSkills();
 
-  // Group skills by category
+  /**
+   * These keys must exactly match the 'category' strings defined in 
+   * the seedDatabase function in server/routes.ts
+   */
   const categories = {
-    languages: { icon: Cpu, label: "Languages & Core", color: "text-primary" },
-    web: { icon: Layout, label: "Frontend Architecture", color: "text-secondary" },
-    backend: { icon: Server, label: "Backend Systems", color: "text-blue-400" },
-    tools: { icon: Wrench, label: "DevOps & Tools", color: "text-green-400" }
+    "Programming Languages": { icon: Cpu, label: "Languages & Core", color: "text-primary" },
+    "Web Technologies": { icon: Layout, label: "Frontend Architecture", color: "text-secondary" },
+    "Databases & Cloud": { icon: Server, label: "Backend Systems", color: "text-blue-400" },
+    "Developer Tools": { icon: Wrench, label: "DevOps & Tools", color: "text-green-400" },
+    "Core Concepts": { icon: Code, label: "Computer Science Core", color: "text-orange-400" }
   };
 
   const getGroupedSkills = () => {
@@ -78,8 +82,8 @@ export default function Skills() {
                           viewport={{ once: true }}
                           transition={{ duration: 1, delay: 0.2 }}
                           className={`h-full rounded-full ${
-                            key === 'web' ? 'bg-secondary shadow-[0_0_10px_rgba(188,19,254,0.5)]' : 
-                            key === 'languages' ? 'bg-primary shadow-[0_0_10px_rgba(0,243,255,0.5)]' :
+                            key === 'Web Technologies' ? 'bg-secondary shadow-[0_0_10px_rgba(188,19,254,0.5)]' : 
+                            key === 'Programming Languages' ? 'bg-primary shadow-[0_0_10px_rgba(0,243,255,0.5)]' :
                             'bg-white/70'
                           }`}
                         />

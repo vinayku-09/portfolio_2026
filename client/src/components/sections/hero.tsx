@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { HolographicSphere } from "@/components/ui/holographic-sphere";
 import { GlitchText } from "@/components/ui/glitch-text";
-import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 export function Hero() {
@@ -64,13 +64,18 @@ export function Hero() {
             </button>
           </div>
 
-          <div className="flex gap-6 text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
             <a href="https://github.com/vinayku-09" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(0,243,255,0.8)] transition-all"><Github className="w-6 h-6" /></a>
             <a href="https://www.linkedin.com/in/vinay-kumar-singh-735a9729b/" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(0,243,255,0.8)] transition-all"><Linkedin className="w-6 h-6" /></a>
-            <div className="flex items-center gap-2 font-mono text-xs">
-              <span className="text-primary/70">TEL:</span>
-              <span className="text-white">9819086916</span>
-            </div>
+            
+            {/* Styled Phone Contact Pill */}
+            <div className="h-8 w-px bg-white/10 mx-2 hidden sm:block" />
+            <a href="tel:9819086916" className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:text-primary hover:shadow-[0_0_15px_rgba(0,243,255,0.2)] transition-all group">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-colors">
+                <Phone className="w-4 h-4" />
+              </div>
+              <span className="font-mono text-sm tracking-tighter">9819086916</span>
+            </a>
           </div>
         </motion.div>
 

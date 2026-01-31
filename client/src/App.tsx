@@ -10,6 +10,7 @@ import Home from "@/pages/home";
 import Projects from "@/pages/projects";
 import Skills from "@/pages/skills";
 import Contact from "@/pages/contact";
+import Education from "@/pages/education";
 
 function Router() {
   const [location] = useLocation();
@@ -20,6 +21,9 @@ function Router() {
         <Route path="/">
           <PageWrapper><Home /></PageWrapper>
         </Route>
+        <Route path="/education">
+  <PageWrapper><Education /></PageWrapper>
+</Route>
         <Route path="/projects">
           <PageWrapper><Projects /></PageWrapper>
         </Route>

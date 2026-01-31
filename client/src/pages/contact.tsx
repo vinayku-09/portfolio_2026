@@ -31,7 +31,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg">EMAIL CHANNEL</h3>
-                <p className="text-muted-foreground font-mono">hello@nexus.dev</p>
+                <p className="text-muted-foreground font-mono">vinaysingh6916@gmail.com</p>
               </div>
             </div>
 
@@ -41,7 +41,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg">BASE LOCATION</h3>
-                <p className="text-muted-foreground font-mono">San Francisco, CA (Remote)</p>
+                <p className="text-muted-foreground font-mono">Kalyan, Mumbai, India</p>
               </div>
             </div>
 
@@ -51,7 +51,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg">VOICE LINK</h3>
-                <p className="text-muted-foreground font-mono">+1 (555) 000-0000</p>
+                <p className="text-muted-foreground font-mono">+91 9819086916</p>
               </div>
             </div>
           </div>

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, User, Layers, Send } from "lucide-react";
+// Added GraduationCap to the imports below
+import { Menu, X, Code2, User, Layers, Send, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Home", icon: User },
   { href: "/projects", label: "Projects", icon: Layers },
   { href: "/skills", label: "Skills", icon: Code2 },
+  { href: "/education", label: "Education", icon: GraduationCap }, 
   { href: "/contact", label: "Contact", icon: Send },
 ];
 
@@ -38,7 +40,7 @@ export function Nav() {
               &lt;/&gt;
             </div>
             <span className="font-display font-bold text-xl tracking-wider group-hover:text-primary transition-colors">
-              NEXUS<span className="text-primary">.DEV</span>
+              Vinay<span className="text-primary">.DEV</span>
             </span>
           </Link>
 
