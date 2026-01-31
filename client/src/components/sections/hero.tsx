@@ -30,14 +30,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-4 tracking-tight leading-none">
-            <GlitchText text="ALEX" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">DEV</span>
+            <GlitchText text="VINAY KUMAR" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SINGH</span>
           </h1>
 
           <div className="text-xl md:text-2xl font-mono text-muted-foreground mb-8 h-8">
             <span>I am a </span>
             <span className="text-primary font-bold">
               <Typewriter
-                words={['Full Stack Developer', 'UI/UX Designer', 'Cyberpunk Enthusiast', 'React Specialist']}
+                words={['Software Developer', 'Full Stack Developer', 'Java & Web Developer', 'Problem Solver']}
                 loop={0}
                 cursor
                 cursorStyle='_'
@@ -65,9 +65,12 @@ export function Hero() {
           </div>
 
           <div className="flex gap-6 text-muted-foreground">
-            <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Github className="w-6 h-6" /></a>
-            <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Linkedin className="w-6 h-6" /></a>
-            <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Twitter className="w-6 h-6" /></a>
+            <a href="https://github.com/vinayku-09" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(0,243,255,0.8)] transition-all"><Github className="w-6 h-6" /></a>
+            <a href="https://www.linkedin.com/in/vinay-kumar-singh-735a9729b/" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(0,243,255,0.8)] transition-all"><Linkedin className="w-6 h-6" /></a>
+            <div className="flex items-center gap-2 font-mono text-xs">
+              <span className="text-primary/70">TEL:</span>
+              <span className="text-white">9819086916</span>
+            </div>
           </div>
         </motion.div>
 

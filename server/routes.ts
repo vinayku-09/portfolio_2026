@@ -8,80 +8,91 @@ async function seedDatabase() {
   const existingProjects = await storage.getProjects();
   if (existingProjects.length === 0) {
     // Projects
-    await storage.createProject({
-      title: "Neon City Visualizer",
-      description: "A real-time 3D rendering engine for procedural cyberpunk city generation using Three.js and WebGL.",
-      imageUrl: "https://images.unsplash.com/photo-1515630278258-407f66498911?auto=format&fit=crop&q=80",
-      projectUrl: "#",
-      repoUrl: "#",
-      techStack: ["Three.js", "React", "WebGL", "GLSL"],
-      featured: true
-    });
-    
-    await storage.createProject({
-      title: "AI Neural Interface",
-      description: "Brain-computer interface simulation dashboard visualizing neural network activity in real-time.",
-      imageUrl: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80",
-      projectUrl: "#",
-      repoUrl: "#",
-      techStack: ["Python", "TensorFlow", "WebSocket", "D3.js"],
-      featured: true
-    });
-    
-    await storage.createProject({
-      title: "CyberSec Guardian",
-      description: "Advanced network traffic analysis tool with holographic data visualization for threat detection.",
-      imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80",
-      projectUrl: "#",
-      repoUrl: "#",
-      techStack: ["Rust", "Tauri", "React", "GraphQL"],
-      featured: true
-    });
+    const projectsData = [
+      { title: "AI Mock Interview", description: "An intelligent platform for simulating job interviews with AI-driven feedback." },
+      { title: "LifeVault", description: "A secure digital vault for managing personal legacy and important life documents." },
+      { title: "Mentor Mitra", description: "A mentorship platform connecting students with industry professionals." },
+      { title: "Cybersecurity Project 1", description: "Advanced threat detection and vulnerability assessment tool." },
+      { title: "Cybersecurity Project 2", description: "Encrypted communication protocol for secure data exchange." }
+    ];
+
+    for (const p of projectsData) {
+      await storage.createProject({
+        ...p,
+        imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
+        projectUrl: "#",
+        repoUrl: "#",
+        techStack: ["React", "Node.js", "AI"],
+        featured: true
+      });
+    }
 
     // Skills
-    const skills = [
-      { name: "TypeScript", category: "Languages", proficiency: 95 },
-      { name: "Rust", category: "Languages", proficiency: 80 },
-      { name: "Python", category: "Languages", proficiency: 90 },
-      { name: "React / Next.js", category: "Web", proficiency: 95 },
-      { name: "WebGL / Three.js", category: "Web", proficiency: 85 },
-      { name: "Node.js", category: "Backend", proficiency: 90 },
-      { name: "PostgreSQL", category: "Backend", proficiency: 85 },
-      { name: "Docker", category: "Tools", proficiency: 80 },
-      { name: "AWS", category: "Tools", proficiency: 75 },
+    const skillsData = [
+      // Languages
+      { name: "Java", category: "Programming Languages", proficiency: 90 },
+      { name: "JavaScript", category: "Programming Languages", proficiency: 85 },
+      { name: "TypeScript", category: "Programming Languages", proficiency: 80 },
+      { name: "Python", category: "Programming Languages", proficiency: 75 },
+      // Web
+      { name: "HTML/CSS", category: "Web Technologies", proficiency: 95 },
+      { name: "React.js", category: "Web Technologies", proficiency: 90 },
+      { name: "Next.js", category: "Web Technologies", proficiency: 85 },
+      { name: "Node.js", category: "Web Technologies", proficiency: 85 },
+      { name: "Tailwind CSS", category: "Web Technologies", proficiency: 90 },
+      // App
+      { name: "Flutter", category: "App Technologies", proficiency: 70 },
+      { name: "Firebase", category: "App Technologies", proficiency: 75 },
+      // Databases
+      { name: "PostgreSQL", category: "Databases & Cloud", proficiency: 85 },
+      { name: "MongoDB", category: "Databases & Cloud", proficiency: 80 },
+      { name: "AWS", category: "Databases & Cloud", proficiency: 70 },
+      { name: "Docker", category: "Databases & Cloud", proficiency: 75 },
+      // Tools
+      { name: "Git", category: "Developer Tools", proficiency: 90 },
+      { name: "Postman", category: "Developer Tools", proficiency: 85 },
+      // Testing
+      { name: "Playwright", category: "Testing Tools", proficiency: 80 },
+      { name: "Selenium", category: "Testing Tools", proficiency: 75 },
+      // Concepts
+      { name: "DSA", category: "Core Concepts", proficiency: 85 },
+      { name: "OOP", category: "Core Concepts", proficiency: 90 },
     ];
     
-    for (const skill of skills) {
+    for (const skill of skillsData) {
       await storage.createSkill(skill);
     }
 
-    // Experience
+    // Experience (Keeping placeholders as no specific update was provided for exp content, but updating for persona)
     await storage.createExperience({
-      role: "Senior Systems Architect",
-      company: "Nexus Corp",
-      duration: "2023 - Present",
-      description: "Leading the development of next-gen neural interface protocols and securing quantum network infrastructure."
-    });
-
-    await storage.createExperience({
-      role: "Full Stack Engineer",
-      company: "CyberSystems Ltd",
-      duration: "2020 - 2023",
-      description: "Developed immersive 3D web applications and optimized high-frequency trading algorithms."
+      role: "Software Developer Intern",
+      company: "Tech Solutions",
+      duration: "2024 - Present",
+      description: "Working on full-stack web applications and improving system performance."
     });
 
     // Education
-    await storage.createEducation({
-      degree: "M.S. Computer Science",
-      institute: "Tech University of Tomorrow",
-      year: "2020"
-    });
-    
-    await storage.createEducation({
-      degree: "B.S. Artificial Intelligence",
-      institute: "Global Cyber Institute",
-      year: "2018"
-    });
+    const educationData = [
+      {
+        degree: "Bachelor of Engineering – Computer Science & Engineering",
+        institute: "Lokmanya Tilak College of Engineering, Navi Mumbai",
+        year: "2023 – 2027",
+      },
+      {
+        degree: "HSC – Higher Secondary Education (Science)",
+        institute: "Presidency Junior College, Ulhasnagar",
+        year: "2021 – 2023",
+      },
+      {
+        degree: "SSC – Secondary School Certificate",
+        institute: "Sai English High School, Kalyan",
+        year: "2020 – 2021",
+      }
+    ];
+
+    for (const edu of educationData) {
+      await storage.createEducation(edu);
+    }
   }
 }
 
@@ -89,10 +100,8 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Seed data on startup
   seedDatabase().catch(console.error);
 
-  // Projects
   app.get(api.projects.list.path, async (req, res) => {
     const projects = await storage.getProjects();
     res.json(projects);
@@ -100,31 +109,25 @@ export async function registerRoutes(
 
   app.get(api.projects.get.path, async (req, res) => {
     const project = await storage.getProject(Number(req.params.id));
-    if (!project) {
-      return res.status(404).json({ message: "Project not found" });
-    }
+    if (!project) return res.status(404).json({ message: "Project not found" });
     res.json(project);
   });
 
-  // Skills
   app.get(api.skills.list.path, async (req, res) => {
     const skills = await storage.getSkills();
     res.json(skills);
   });
 
-  // Experience
   app.get(api.experience.list.path, async (req, res) => {
     const experience = await storage.getExperience();
     res.json(experience);
   });
 
-  // Education
   app.get(api.education.list.path, async (req, res) => {
     const education = await storage.getEducation();
     res.json(education);
   });
 
-  // Contact
   app.post(api.contact.create.path, async (req, res) => {
     try {
       const input = api.contact.create.input.parse(req.body);

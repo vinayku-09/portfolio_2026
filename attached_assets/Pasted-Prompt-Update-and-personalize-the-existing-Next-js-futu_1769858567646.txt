@@ -1,0 +1,142 @@
+Prompt:
+
+Update and personalize the existing Next.js futuristic portfolio website with the following real user details, content, and UI enhancements while preserving the cyberpunk / holographic aesthetic.
+
+👤 Personal Identity
+
+Name: Vinay Kumar Singh
+
+Title (typing + rewrite animation):
+
+Software Developer
+
+Full Stack Developer
+
+Java & Web Developer
+
+Problem Solver
+
+Typing animation should loop infinitely with smooth delete & rewrite effect.
+
+📞 Contact Information
+
+Phone: 9819086916
+
+LinkedIn: https://www.linkedin.com/in/vinay-kumar-singh-735a9729b/
+
+GitHub: https://github.com/vinayku-09
+
+Add clickable icons in the Contact section and footer with neon hover glow.
+
+📂 Projects Section (Update Content)
+
+Display projects as glowing cards with hover animation and “View Project” button (links can be placeholders for now):
+
+AI Mock Interview
+
+LifeVault
+
+Mentor Mitra
+
+Cybersecurity Project 1
+
+Cybersecurity Project 2
+
+Each project card should include:
+
+Project title
+
+Short placeholder description
+
+Future-ready external link button
+
+🎓 Education Timeline (Vertical / Horizontal Timeline)
+
+Replace education data with:
+
+Bachelor of Engineering – Computer Science & Engineering
+August 2023 – May 2027
+Lokmanya Tilak College of Engineering, Navi Mumbai
+CGPA: 8.55 / 10
+
+HSC – Higher Secondary Education (Science)
+August 2021 – June 2023
+Presidency Junior College, Ulhasnagar
+Percentage: 60.67%
+
+SSC – Secondary School Certificate
+August 2020 – June 2021
+Sai English High School, Kalyan
+Percentage: 80.67%
+
+Use animated timeline nodes with glow and smooth scroll reveal.
+
+🛠 Skills Section (Replace Completely)
+
+Display skills in categorized glowing cards or grid layout:
+
+Programming Languages:
+Java, JavaScript, TypeScript, Python
+
+Web Technologies:
+HTML, CSS, Node.js, Express.js, React.js, Next.js, Tailwind CSS, JSP, Bootstrap, RESTful Web Services
+
+App Technologies:
+Flutter, Firebase
+
+Databases & Cloud:
+MongoDB, MySQL, PostgreSQL, AWS, Kubernetes, Docker
+
+Developer Tools:
+Git, Postman
+
+Testing Tools:
+Playwright, JUnit, Selenium
+
+Core Concepts:
+Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, DBMS, Data Warehousing & Mining
+
+Add hover glow and subtle motion.
+
+🖼 Profile Photo Integration (IMPORTANT)
+Placement:
+
+Add a profile photo section in the Hero area (right side on desktop, top on mobile).
+
+Styling:
+
+Convert the provided photo into a futuristic cyber-style portrait:
+
+Circular or hexagonal frame
+
+Neon cyan/purple glowing border
+
+Soft background blur
+
+Subtle floating animation
+
+Optional digital grid or hologram overlay
+
+Behavior:
+
+On hover: glow intensifies + slight scale up
+
+Fully responsive
+
+Use the uploaded image as the source and optimize it for web performance.
+
+⚙️ Technical Constraints
+
+Framework: Next.js (App Router)
+
+Component-based structure
+
+CSS Modules or global CSS (no Tailwind requirement)
+
+Smooth animations (Framer Motion optional)
+
+Clean, readable, production-ready code
+
+🎯 Final Goal
+
+The website should feel like a high-end futuristic developer command center, clearly showcasing Vinay Kumar Singh as a strong software engineer candidate for internships and placements.

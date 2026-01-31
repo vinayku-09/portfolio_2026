@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/hero";
 import { NeonCard } from "@/components/ui/neon-card";
 import { ContactForm } from "@/components/sections/contact-form";
 import { useProjects, useSkills, useExperience } from "@/hooks/use-portfolio";
-import { ExternalLink, Github, Code, Cpu, Globe, Database, Calendar } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Code, Cpu, Globe, Database, Calendar } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -202,7 +202,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-white/10 bg-black text-center text-muted-foreground text-sm font-mono">
-        <p>SYSTEM STATUS: ONLINE // © {new Date().getFullYear()} NEXUS.DEV</p>
+        <div className="flex justify-center gap-6 mb-4">
+          <a href="https://github.com/vinayku-09" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all"><Github className="w-5 h-5" /></a>
+          <a href="https://www.linkedin.com/in/vinay-kumar-singh-735a9729b/" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all"><Linkedin className="w-5 h-5" /></a>
+        </div>
+        <p>SYSTEM STATUS: ONLINE // © {new Date().getFullYear()} VINAY.DEV</p>
       </footer>
     </div>
   );
