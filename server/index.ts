@@ -83,15 +83,21 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
-  const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      // reusePort: true was removed here to fix ENOTSUP error on Windows
-    },
-    () => {
-      log(`serving on port ${port}`);
-    },
-  );
+  // Only listen to the port if we are NOT on Vercel
+  // Vercel handles the listening part itself
+  if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
+    const port = parseInt(process.env.PORT || "5000", 10);
+    httpServer.listen(
+      {
+        port,
+        host: "0.0.0.0",
+      },
+      () => {
+        log(`serving on port ${port}`);
+      },
+    );
+  }
 })();
+
+// CRITICAL: Export app for Vercel Serverless Functions
+export default app;
