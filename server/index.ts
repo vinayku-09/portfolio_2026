@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { serveStatic } from "./static";
+import { registerRoutes } from "./routes.js"; // Added .js for ESM compatibility
+import { serveStatic } from "./static.js"; // Added .js for ESM compatibility
 import { createServer } from "http";
 import "dotenv/config";
 
@@ -61,6 +61,7 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Pass the Express app to the routes handler
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
@@ -79,13 +80,12 @@ app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") {
     serveStatic(app);
   } else {
-    const { setupVite } = await import("./vite");
+    const { setupVite } = await import("./vite.js");
     await setupVite(httpServer, app);
   }
 
-  // Only listen to the port if we are NOT on Vercel
-  // Vercel handles the listening part itself
-  if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
+  // Only start the listener if not on Vercel
+  if (!process.env.VERCEL) {
     const port = parseInt(process.env.PORT || "5000", 10);
     httpServer.listen(
       {
@@ -99,5 +99,5 @@ app.use((req, res, next) => {
   }
 })();
 
-// CRITICAL: Export app for Vercel Serverless Functions
+// CRITICAL: Vercel needs this export to handle the serverless function
 export default app;
