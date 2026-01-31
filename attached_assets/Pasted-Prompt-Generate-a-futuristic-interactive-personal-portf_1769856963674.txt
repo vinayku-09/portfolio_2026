@@ -1,0 +1,155 @@
+Prompt:
+
+Generate a futuristic, interactive personal portfolio website using Next.js (latest version with App Router) inspired by a holographic sci-fi UI dashboard.
+
+⚙️ Technical Requirements
+
+Framework: Next.js (App Router)
+
+Component-based architecture
+
+CSS Modules or global CSS (no Tailwind)
+
+JavaScript for animations and effects
+
+Clean, readable, production-ready code
+
+Fully responsive (mobile, tablet, desktop)
+
+🎨 Visual & UI Style
+
+Dark cyberpunk theme with black/deep blue background
+
+Neon cyan, blue, and purple glowing accents
+
+Glassmorphism UI panels with blur and glow
+
+Floating holographic cards and smooth transitions
+
+Subtle particles, digital grid, and depth effects
+
+Central animated 3D digital globe (Three.js compatible, placeholder acceptable)
+
+🧠 Hero Section
+
+Center-aligned hero layout
+
+Large glowing name text (editable later)
+
+Subtitle with continuous typing + deleting + rewriting animation cycling through:
+
+Software Developer
+
+Full Stack Developer
+
+Java & Web Developer
+
+Problem Solver
+
+Typing animation must loop infinitely
+
+🧭 Navigation
+
+Floating holographic navigation cards/buttons:
+
+About Me
+
+Skills
+
+Projects
+
+Education
+
+Experience
+
+Contact
+
+Each navigation item:
+
+Glows on hover
+
+Uses smooth animated transitions
+
+Scrolls or navigates to its section
+
+👤 About Me Section
+
+Professional introduction text (placeholder content)
+
+Animated text reveal
+
+Clean futuristic typography
+
+🛠 Skills Section
+
+Skills shown as glowing cards or nodes
+
+Categories:
+
+Programming Languages
+
+Web Technologies
+
+Backend & Databases
+
+Tools & Frameworks
+
+Animated progress indicators
+
+📂 Projects Section
+
+Horizontal scroll or carousel layout
+
+Each project card includes:
+
+Project image/thumbnail
+
+Project title
+
+Short description
+
+“View Project” button
+
+Project links should be dynamic placeholders (links will be provided later)
+
+Hover glow and lift animation
+
+🎓 Education Section
+
+Timeline or card-based layout
+
+Degree, institute, and year (placeholder data)
+
+Smooth entrance animations
+
+💼 Experience Section
+
+Clean professional layout
+
+Role, company, duration
+
+Animated appearance on scroll
+
+📬 Contact Section
+
+Floating glassmorphism contact panel
+
+Email call-to-action
+
+Social icons (GitHub, LinkedIn, Twitter)
+
+Neon hover effects
+
+✨ Animations & Effects
+
+Typing & rewriting text animation
+
+Smooth scrolling and section transitions
+
+Parallax depth effect
+
+Micro-interactions on hover
+
+🚀 Goal
+
+The final Next.js website should feel like a high-end sci-fi developer control panel, visually impressive, recruiter-ready, and easy to customize with real data later.
