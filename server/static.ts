@@ -3,16 +3,15 @@ import path from "path";
 import fs from "fs";
 
 export function serveStatic(app: Express) {
-  // Use process.cwd() to get the absolute root directory of your project
+  // Use process.cwd() to get the project's root folder on Vercel
   const distPath = path.resolve(process.cwd(), "dist", "public");
 
   if (!fs.existsSync(distPath)) {
-    console.error(`CRITICAL: Build directory not found at ${distPath}`);
+    console.error(`Build folder missing at: ${distPath}`);
   }
 
   app.use(express.static(distPath));
 
-  // The Catch-All Route: Ensures React handles sub-pages like /about
   app.use("*", (_req, res) => {
     const indexPath = path.resolve(distPath, "index.html");
     if (fs.existsSync(indexPath)) {
