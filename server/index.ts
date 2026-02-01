@@ -1,13 +1,14 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes.js"; // Added .js
-import { serveStatic } from "./static.js";   // Added .js
+import { registerRoutes } from "./routes.js"; 
+import { serveStatic } from "./static.js";   
 import { createServer } from "http";
-import serverless from "serverless-http";     // Required for Netlify
+import serverless from "serverless-http";     
 import "dotenv/config";
 
 const app = express();
 const httpServer = createServer(app);
 
+// Use a type-safe way to handle rawBody for webhooks if needed
 app.use(express.json({
   verify: (req: any, _res, buf) => {
     req.rawBody = buf;
@@ -23,36 +24,33 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
-// Request logging middleware
+// Optimized logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
-  const path = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined = undefined;
-  const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
-  };
   res.on("finish", () => {
     const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      log(`${req.method} ${path} ${res.statusCode} in ${duration}ms`);
+    if (req.path.startsWith("/api")) {
+      log(`${req.method} ${req.path} ${res.statusCode} in ${duration}ms`);
     }
   });
   next();
 });
 
 (async () => {
+  // Register all API routes
   await registerRoutes(httpServer, app);
 
+  // Global Error Handler
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
+    console.error(`[Error] ${status} - ${message}`);
     if (!res.headersSent) {
       res.status(status).json({ message });
     }
   });
 
+  // Handle Static Files vs Vite Dev Server
   if (process.env.NODE_ENV === "production") {
     serveStatic(app);
   } else {
@@ -60,8 +58,8 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
-  // Only listen on a port if NOT on Netlify/Vercel
-  if (!process.env.NETLIFY && !process.env.VERCEL) {
+  // Only start a local server if NOT running as a Serverless Function
+  if (!process.env.NETLIFY && !process.env.VERCEL && !process.env.LAMBDA_TASK_ROOT) {
     const port = parseInt(process.env.PORT || "5000", 10);
     httpServer.listen({ port, host: "0.0.0.0" }, () => {
       log(`serving on port ${port}`);
@@ -69,7 +67,6 @@ app.use((req, res, next) => {
   }
 })();
 
-// Export for Netlify Functions
+// Primary export for Netlify (Handler) and Vercel (Default)
 export const handler = serverless(app);
-// Export for Vercel
 export default app;
