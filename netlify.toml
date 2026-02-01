@@ -3,8 +3,9 @@
   publish = "dist/public"
 
 [functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
   external_node_modules = ["express", "pg", "drizzle-orm"]
-  node_bundle = true
 
 [[redirects]]
   from = "/api/*"
